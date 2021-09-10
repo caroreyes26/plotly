@@ -73,8 +73,7 @@ function buildCharts(sample) {
         var sampleValues = result.sample_values;
 
     // 7. Create the yticks for the bar chart.
-    // Hint: Get the the top 10 otu_ids and map them in descending order  
-    //  so the otu_ids with the most bacteria are last. 
+    // Hint: Get the the top 10 otu_ids and map them in descending order so the otu_ids with the most bacteria are last. 
 
     var yticks = ids.map(sampleObj => "OTU" + sampleObj).slice(0,10).reverse();
 
@@ -137,6 +136,7 @@ function buildCharts(sample) {
     var gaugeResult = gaugeArray[0];
 
     // Create variables that hold the otu_ids, otu_labels, and sample_values.
+    // step above was done in deliverable #1
 
 
     // 3. Create a variable that holds the washing frequency.
@@ -159,6 +159,7 @@ function buildCharts(sample) {
         }
     }]
     // Create the yticks for the bar chart.
+
 
     // Use Plotly to plot the bar data and layout.
     Plotly.newPlot();
