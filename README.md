@@ -1,1 +1,4 @@
 # plotly
+
+
+![Dashboard](dashboard.png)
