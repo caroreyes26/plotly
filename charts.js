@@ -69,8 +69,8 @@ function buildCharts(sample) {
         var labels = results.otu_labels
         var values = results.otu_values
 
-        var sampleLabels = result.otu_labels;
-        var sampleValues = result.sample_values;
+        var bubbleLabels = result.otu_labels;
+        var bubbleValues = result.sample_values;
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order so the otu_ids with the most bacteria are last. 
@@ -99,12 +99,12 @@ function buildCharts(sample) {
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
         x: ids,
-        y: sampleValues,
-        text: sampleLabels,
+        y: bubbleValues,
+        text: bubbleLabels,
         mode: "markers",
          marker: {
-             size: sampleValues,
-             color: sampleValues,
+             size: bubbleValues,
+             color: bubbleValues,
              colorscale: "Earth"
          }
     }
@@ -112,7 +112,7 @@ function buildCharts(sample) {
     ];
 
     // 2. Create the layout for the bubble chart.
-    var sampleLayout = {
+    var bubbleLayout = {
         title:"Bacteria Per Sample",
         xaxis: {title:"OTU ID"},
         automargin: true,
@@ -162,10 +162,10 @@ function buildCharts(sample) {
 
 
     // Use Plotly to plot the bar data and layout.
-    Plotly.newPlot();
+    Plotly.newPlot("bar",barData,barLayout);
     
     // Use Plotly to plot the bubble data and layout.
-    Plotly.newPlot();
+    Plotly.newPlot("bubble",bubbleData,bubbleLayout);
    
     
     // 4. Create the trace for the gauge chart.
@@ -182,8 +182,5 @@ function buildCharts(sample) {
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge",gaugeData, gaugeLayout);
   });
-  });
 }
-    
-  });
-}
+
